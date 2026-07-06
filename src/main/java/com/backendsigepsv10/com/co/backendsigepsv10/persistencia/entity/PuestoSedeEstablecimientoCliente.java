@@ -1,0 +1,95 @@
+//DECLARACIÓN DE PAQUETES:
+package com.backendsigepsv10.com.co.backendsigepsv10.persistencia.entity;
+
+//IMPORTACIÓN DE LIBRERIAS:
+import lombok.Data;
+import jakarta.persistence.*;
+import java.util.Date;
+
+/**
+* @Autor HERNAN ADOLFO NUÑEZ GONZALEZ / DAVID GIOVANNI PAEZ OVALLE.
+* @Since 11/06/2026.
+* Declaración de la entidad.
+*/
+@Data//DECLARACIÓN DE LA DATA PARA LOS DATOS DE LA TABLA DE LA BASE DE DATOS PARA LA ENTIDAD.
+@Entity//DECLARACIÓN DE LA ENTIDAD QUE ES LA MISMA TABLA DE LA BASE DE DATOS.
+@Table(name = "TABLA_PUESTOS_SEDES_ESTABLECIMIENTOS_CLIENTES")//REFERENCIA A LA TABLA DE LA BASE DE DATOS.
+public class PuestoSedeEstablecimientoCliente {
+
+    //CAMPOS DE LA TABLA DE LA BASE DE DATOS:
+    @Id//DECLARACIÓN DEL ID PRINCIPAL DE LA TABLA DE BASE DE DATOS.
+    
+    //AQUI ES DONDE SE CREA EL ENLACE ENTRE LOS CAMPOS DE LA TABLA DE LA BASE DE DATOS Y LAS VARIABLES DECLARADAS
+    //QUE RECIBIRAN O ENVIARAS LOS DATOS A LA BASE DE DATOS PARA LA ENTIDAD.
+    //NOTA: EN LOS NAME SE PONEN EL NOMBRE DE LOS CAMPOS DE LA TABLA DE LA BASE DE DATOS EXACTAMENTE IGUAL A COMO SE CREARÓN.
+    @Column(name = "ID_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="BIGINT NOT NULL")
+    private Long idPuestoSedeEstablecimientoCliente;
+    
+    //@Column(name = "ID_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="BIGINT NOT NULL")
+    //private Long idSedeEstablecimientoCliente;
+    //@JsonIgnore//OMITE DATO O CAMPO.
+    @OneToOne(fetch = FetchType.LAZY)//MAPEA RELACIÓN DE FORMA PEREZOSA.
+    @JoinColumn(name = "ID_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="BIGINT NOT NULL")
+    private SedeEstablecimientoCliente sedeEstablecimientoCliente;
+    
+    @Column(name = "NOMBRE_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="VARCHAR(150) NOT NULL")
+    private String nombrePuestoSedeEstablecimientoCliente;
+    
+    @Column(name = "DESCRIPCION_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="TEXT NOT NULL")
+    private String descripcionPuestoSedeEstablecimientoCliente;
+
+    @Column(name = "FECHA_H_M_S_INGRESO_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="DATETIME NOT NULL")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaHMSIngresoPuestoSedeEstablecimientoCliente;
+
+    @Column(name = "FECHA_H_M_S_MODIFICACION_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="DATETIME NOT NULL")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaHMSModificacionPuestoSedeEstablecimientoCliente;
+
+    @Column(name = "ESTADO_PUESTO_SEDE_ESTABLECIMIENTO_CLIENTE", columnDefinition="VARCHAR(50) NOT NULL")
+    private String estadoPuestoSedeEstablecimientoCliente;
+
+    /*//DECLARACIÓN DE LOS MÉTODOS SETTERS Y GETTERS DE LAS VARIABLES DECLARADAS DE LOS CAMPOS DE LA TABLA DE LA BASE DE DATOS DE LA ENTIDAD:
+    public Long getIdPuestoSedeEstablecimientoCliente() {
+        return idPuestoSedeEstablecimientoCliente;
+    }
+    public void setIdPuestoSedeEstablecimientoCliente(Long idPuestoSedeEstablecimientoCliente) {
+        this.idPuestoSedeEstablecimientoCliente = idPuestoSedeEstablecimientoCliente;
+    }
+    public String getNombrePuestoSedeEstablecimientoCliente() {
+        return nombrePuestoSedeEstablecimientoCliente;
+    }
+    public void setNombrePuestoSedeEstablecimientoCliente(String nombrePuestoSedeEstablecimientoCliente) {
+        this.nombrePuestoSedeEstablecimientoCliente = nombrePuestoSedeEstablecimientoCliente;
+    }
+    public String getDescripcionPuestoSedeEstablecimientoCliente() {
+        return descripcionPuestoSedeEstablecimientoCliente;
+    }
+    public void setDescripcionPuestoSedeEstablecimientoCliente(String descripcionPuestoSedeEstablecimientoCliente) {
+        this.descripcionPuestoSedeEstablecimientoCliente = descripcionPuestoSedeEstablecimientoCliente;
+    }
+    public Date getFechaHMSIngresoPuestoSedeEstablecimientoCliente() {
+        return fechaHMSIngresoPuestoSedeEstablecimientoCliente;
+    }
+    public void setFechaHMSIngresoPuestoSedeEstablecimientoCliente(Date fechaHMSIngresoPuestoSedeEstablecimientoCliente) {
+        this.fechaHMSIngresoPuestoSedeEstablecimientoCliente = fechaHMSIngresoPuestoSedeEstablecimientoCliente;
+    }
+    public Date getFechaHMSModificacionPuestoSedeEstablecimientoCliente() {
+        return fechaHMSModificacionPuestoSedeEstablecimientoCliente;
+    }
+    public void setFechaHMSModificacionPuestoSedeEstablecimientoCliente(Date fechaHMSModificacionPuestoSedeEstablecimientoCliente) {
+        this.fechaHMSModificacionPuestoSedeEstablecimientoCliente = fechaHMSModificacionPuestoSedeEstablecimientoCliente;
+    }
+    public String getEstadoPuestoSedeEstablecimientoCliente() {
+        return estadoPuestoSedeEstablecimientoCliente;
+    }
+    public void setEstadoPuestoSedeEstablecimientoCliente(String estadoPuestoSedeEstablecimientoCliente) {
+        this.estadoPuestoSedeEstablecimientoCliente = estadoPuestoSedeEstablecimientoCliente;
+    }
+    public SedeEstablecimientoCliente getSedeEstablecimientoCliente() {
+        return sedeEstablecimientoCliente;
+    }
+    public void setSedeEstablecimientoCliente(SedeEstablecimientoCliente sedeEstablecimientoCliente) {
+        this.sedeEstablecimientoCliente = sedeEstablecimientoCliente;
+    }*/
+}
