@@ -61,6 +61,8 @@ public class RespuestaDTO {
     private List<SedeEstablecimientoClienteDTO> sedesEstablecimientosClientesDTO;
     private SubclasificacionEmpleadoPlantaDTO subclasificacionEmpleadoPlantaDTO;
     private List<SubclasificacionEmpleadoPlantaDTO> subclasificacionesEmpleadosPlantasDTO;
+    private TarifaEmpleadoDTO tarifaEmpleadoDTO;
+    private List<TarifaEmpleadoDTO> tarifasEmpleadosDTO;
     private TipoDocumentoIdentificacionDTO tipoDocumentoIdentificacionDTO;
     private List<TipoDocumentoIdentificacionDTO> tiposDocumentosIdentificacionDTO;
     private TipoEmpleadoDTO tipoEmpleadoDTO;
@@ -71,6 +73,8 @@ public class RespuestaDTO {
     private List<TipoMovimientoDTO> tiposMovimientosDTO;
     private TipoNovedadEmpleadoDTO tipoNovedadEmpleadoDTO;
     private List<TipoNovedadEmpleadoDTO> tiposNovedadesEmpleadosDTO;
+    private TipoTarifaEmpleadoDTO tipoTarifaEmpleadoDTO;
+    private List<TipoTarifaEmpleadoDTO> tiposTarifasEmpleadosDTO;
     private TipoUsuarioDTO tipoUsuarioDTO;
     private List<TipoUsuarioDTO> tiposUsuariosDTO;
     private TurnoDTO turnoDTO;
@@ -433,6 +437,30 @@ public class RespuestaDTO {
     }
     public void setUsuariosDTO(List<UsuarioDTO> usuariosDTO) {
         this.usuariosDTO = usuariosDTO;
+    }
+    public TarifaEmpleadoDTO getTarifaEmpleadoDTO() {
+        return tarifaEmpleadoDTO;
+    }
+    public void setTarifaEmpleadoDTO(TarifaEmpleadoDTO tarifaEmpleadoDTO) {
+        this.tarifaEmpleadoDTO = tarifaEmpleadoDTO;
+    }
+    public List<TarifaEmpleadoDTO> getTarifasEmpleadosDTO() {
+        return tarifasEmpleadosDTO;
+    }
+    public void setTarifasEmpleadosDTO(List<TarifaEmpleadoDTO> tarifasEmpleadosDTO) {
+        this.tarifasEmpleadosDTO = tarifasEmpleadosDTO;
+    }
+    public TipoTarifaEmpleadoDTO getTipoTarifaEmpleadoDTO() {
+        return tipoTarifaEmpleadoDTO;
+    }
+    public void setTipoTarifaEmpleadoDTO(TipoTarifaEmpleadoDTO tipoTarifaEmpleadoDTO) {
+        this.tipoTarifaEmpleadoDTO = tipoTarifaEmpleadoDTO;
+    }
+    public List<TipoTarifaEmpleadoDTO> getTiposTarifasEmpleadosDTO() {
+        return tiposTarifasEmpleadosDTO;
+    }
+    public void setTiposTarifasEmpleadosDTO(List<TipoTarifaEmpleadoDTO> tiposTarifasEmpleadosDTO) {
+        this.tiposTarifasEmpleadosDTO = tiposTarifasEmpleadosDTO;
     }
     public RespuestaDTO() {
     }

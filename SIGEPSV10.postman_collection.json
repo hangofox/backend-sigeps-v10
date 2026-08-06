@@ -1701,6 +1701,87 @@
 			]
 		},
 		{
+			"name": "CorreosElectronicos",
+			"item": [
+				{
+					"name": "EnviarCorreoElectronico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authEnable\": true,\r\n    \"startTTLSEnable\": true,\r\n    \"smtpHost\": \"10.10.60.98\",\r\n    \"smtpPort\": 25,\r\n    \"smtpProtocols\": \"TLSv1.2\",\r\n    \"usuarioRemitente\": \"notificaciones.app@buzonejercito.mil.co\",\r\n    \"passwordRemitente\": \"Not1fic4cion*22\",\r\n    \"correoElectronicoRemitente\": \"notificaciones.app@buzonejercito.mil.co\",\r\n    \"correoElectronicoDestinatario\": \"hernan.nunez@ejercito.mil.co\",\r\n    \"asuntoDestinatario\": \"Prueba de Envío de Correo Electrónico.\",\r\n    \"cuerpoMensajeHtml\": \"<h1>Este es un mensaje de prueba.</h1>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/emails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EnviarCorreoElectronico1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idUsuario\": 1,\r\n  \"medioEnvio\": \"PERSONAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/emails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"emails"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "DepartamentosoEstadosMundo",
 			"item": [
 				{
@@ -2083,7 +2164,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg3MDEyNzEyLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.3LwHVgM1Rk4NMI171l2N-OWFX5Mmor2yRzzu_6-cbAM",
 									"type": "string"
 								}
 							]
@@ -3038,6 +3119,359 @@
 			]
 		},
 		{
+			"name": "GestionArchivos",
+			"item": [
+				{
+					"name": "CrearCarpeta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"folderPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/NUEVA_CARPETA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/carpetas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"carpetas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RenombrarCarpeta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"oldPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/NUEVA_CARPETA\",\r\n  \"newPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/NUEVA_CARPETA1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/carpetas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"carpetas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarCarpeta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"folderPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/NUEVA_CARPETA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/carpetas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"carpetas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg3MDEyNzEyLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.3LwHVgM1Rk4NMI171l2N-OWFX5Mmor2yRzzu_6-cbAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/files/archivos/rutaEstatica?path=C:/aplicaciones1/Archivos_SIGEPS/usuarios/TVE9PQ==.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos",
+								"rutaEstatica"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "C:/aplicaciones1/Archivos_SIGEPS/usuarios/TVE9PQ==.png"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescargarArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/files/archivos/T1RNeU16ZzNORFE9.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos",
+								"T1RNeU16ZzNORFE9.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SubirArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg3MDEyNzEyLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.3LwHVgM1Rk4NMI171l2N-OWFX5Mmor2yRzzu_6-cbAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/DELL/Pictures/emoticon_risa_01.png"
+								},
+								{
+									"key": "path",
+									"value": "C:/aplicaciones1/Archivos_SIGEPS/usuarios/archivoSubido.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/archivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MoverArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sourcePath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/BASPC06/T1RNek9ETXlOekE9.jpg\",\r\n  \"destinationPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/responsables/BAICC/T1RNek9ETXlOekE9.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/archivos/mover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos",
+								"mover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RenombrarArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"oldPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/usuarios/prueba1.jpg\",\r\n  \"newPath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/usuarios/prueba2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/archivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarArchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzUwNDY1MzYwLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.191LbF7ly9Hb-_LfXQ5FbmsrHwC555oeSWC4J7EmU-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filePath\": \"C:/aplicaciones1/archivos_psiadmecejcnacv20/usuarios/prueba2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/files/archivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"files",
+								"archivos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "HistorialesMovimientosEmpleados",
 			"item": [
 				{
@@ -3110,7 +3544,7 @@
 							"query": [
 								{
 									"key": "keyword",
-									"value": "",
+									"value": "11023456701",
 									"disabled": true
 								},
 								{
@@ -3155,7 +3589,7 @@
 							"query": [
 								{
 									"key": "keyword",
-									"value": "",
+									"value": "11023456701",
 									"disabled": true
 								},
 								{
@@ -3429,7 +3863,7 @@
 								},
 								{
 									"key": "keyword",
-									"value": "",
+									"value": "11023456701",
 									"disabled": true
 								},
 								{
@@ -3479,7 +3913,7 @@
 								},
 								{
 									"key": "keyword",
-									"value": "",
+									"value": "11023456701",
 									"disabled": true
 								},
 								{
@@ -4346,7 +4780,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/privilegyRestriccAccesoUsuario/count",
+							"raw": "http://localhost:8084/privilegyRestriccAccesoUsuario/count?idUsuario=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4379,8 +4813,7 @@
 								},
 								{
 									"key": "idUsuario",
-									"value": "",
-									"disabled": true
+									"value": "1"
 								},
 								{
 									"key": "idPrivilegyRestriccAccesoUsuario",
@@ -5474,6 +5907,346 @@
 			]
 		},
 		{
+			"name": "RecuperacionesContrasenasAccesosUsuarios",
+			"item": [
+				{
+					"name": "ContarTotalRecuperacionesContrasenasAccesosUsuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"count"
+							],
+							"query": [
+								{
+									"key": "idPaisMundo",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodasRecuperacionesContrasenasAccesosUsuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/lista",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodasRecuperacionesContrasenasAccesosUsuariosPaginadas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/listaPag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"listaPag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearRecuperacionContrasenaAccesoUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idRecuperacionContrasenaAccesoUsuario\": 2,\r\n    \"codigoActivacionContrasenaAccesoUsuario\": \"891025\",\r\n    \"fechaHMSExpCodActivContrasenaAccesoUsuario\": \"2026-07-02T00:00:00.000-05:00\",\r\n    \"estadoUsoCodigoActivacionContrasenaAccesoUsuario\": \"EXPIRADO\",\r\n    \"usuarioDTO\": {\r\n        \"idUsuario\": 1,\r\n        \"nicknameUsuario\": \"administrator\",\r\n        \"passwordUsuario\": \"Vm0wd2QyVkZNVWRpUm1ScFVtMVNXRll3Wkc5V2JHeDBaVVYwV0ZKdGVEQmFSV2hyVm14S2MyTkljRmROYWtaSVZqQmFTMk15VGtsaVJtUnBWa1phZVZadE1UUlRNbEpYVW01T2FWSnNXbGhaYkZwS1pXeGFjMVp0UmxkTlZuQlhWRlpXVjJGSFZuRlJWR3M5\",\r\n        \"tipoDocumentoIdentificacionDTO\": {\r\n            \"idTipoDocumentoIdentificacion\": 1,\r\n            \"nombreTipoDocumentoIdentificacion\": \"CEDULA DE CIUDADANIA\"\r\n        },\r\n        \"numeroDocumentoIdentificacionUsuario\": \"1\",\r\n        \"lugarExpedicionDocumentoIdentificacionUsuario\": \"IBAGUE, TOLIMA\",\r\n        \"nombresUsuario\": \"ADMINISTRADOR\",\r\n        \"primerApellidoUsuario\": \"DEL\",\r\n        \"segundoApellidoUsuario\": \"SISTEMA\",\r\n        \"nombreArchivoFotoExtensionoFormatoUsuario\": \"\",\r\n        \"fechaHMSNacimientoUsuario\": \"1985-03-18T00:00:00.000-05:00\",\r\n        \"sexoUsuario\": \"MASCULINO\",\r\n        \"direccionUsuario\": \"SANTA ANA\",\r\n        \"telefonoUsuario\": \"-\",\r\n        \"movilUsuario\": \"3227965621\",\r\n        \"correoElectronicoPersonalUsuario\": \"adminsystem@alcaldiapalermo.com\",\r\n        \"correoElectronicoInstitucionalUsuario\": \"\",\r\n        \"paisOrigenUsuario\": \"COLOMBIA\",\r\n        \"departamentooEstadoOrigenUsuario\": \"TOLIMA\",\r\n        \"ciudadOrigenUsuario\": \"IBAGUE\",\r\n        \"tipoUsuarioDTO\": {\r\n            \"idTipoUsuario\": 1,\r\n            \"nombreTipoUsuario\": \"SUPER ADMINISTRADOR\"\r\n        },\r\n        \"fechaHMSIngresoUsuario\": \"2019-08-05T17:32:00.000-05:00\",\r\n        \"fechaHMSModificacionUsuario\": \"2026-07-02T06:15:00.000-05:00\",\r\n        \"estadoUsuario\": \"ACTIVO\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarBYIdRecuperacionContrasenaAccesoUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarBYCodigoActivacionContrasenaAccesoUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/codigoActivacion/891017",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"codigoActivacion",
+								"891017"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRecuperacionContrasenaAccesoUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idRecuperacionContrasenaAccesoUsuario\": 2,\r\n    \"codigoActivacionContrasenaAccesoUsuario\": \"891025\",\r\n    \"fechaHMSExpCodActivContrasenaAccesoUsuario\": \"2026-07-02T00:00:00.000-05:00\",\r\n    \"estadoUsoCodigoActivacionContrasenaAccesoUsuario\": \"EXPIRADO\",\r\n    \"usuarioDTO\": {\r\n        \"idUsuario\": 1,\r\n        \"nicknameUsuario\": \"administrator\",\r\n        \"passwordUsuario\": \"Vm0wd2QyVkZNVWRpUm1ScFVtMVNXRll3Wkc5V2JHeDBaVVYwV0ZKdGVEQmFSV2hyVm14S2MyTkljRmROYWtaSVZqQmFTMk15VGtsaVJtUnBWa1phZVZadE1UUlRNbEpYVW01T2FWSnNXbGhaYkZwS1pXeGFjMVp0UmxkTlZuQlhWRlpXVjJGSFZuRlJWR3M5\",\r\n        \"tipoDocumentoIdentificacionDTO\": {\r\n            \"idTipoDocumentoIdentificacion\": 1,\r\n            \"nombreTipoDocumentoIdentificacion\": \"CEDULA DE CIUDADANIA\"\r\n        },\r\n        \"numeroDocumentoIdentificacionUsuario\": \"1\",\r\n        \"lugarExpedicionDocumentoIdentificacionUsuario\": \"IBAGUE, TOLIMA\",\r\n        \"nombresUsuario\": \"ADMINISTRADOR\",\r\n        \"primerApellidoUsuario\": \"DEL\",\r\n        \"segundoApellidoUsuario\": \"SISTEMA\",\r\n        \"nombreArchivoFotoExtensionoFormatoUsuario\": \"\",\r\n        \"fechaHMSNacimientoUsuario\": \"1985-03-18T00:00:00.000-05:00\",\r\n        \"sexoUsuario\": \"MASCULINO\",\r\n        \"direccionUsuario\": \"SANTA ANA\",\r\n        \"telefonoUsuario\": \"-\",\r\n        \"movilUsuario\": \"3227965621\",\r\n        \"correoElectronicoPersonalUsuario\": \"adminsystem@alcaldiapalermo.com\",\r\n        \"correoElectronicoInstitucionalUsuario\": \"\",\r\n        \"paisOrigenUsuario\": \"COLOMBIA\",\r\n        \"departamentooEstadoOrigenUsuario\": \"TOLIMA\",\r\n        \"ciudadOrigenUsuario\": \"IBAGUE\",\r\n        \"tipoUsuarioDTO\": {\r\n            \"idTipoUsuario\": 1,\r\n            \"nombreTipoUsuario\": \"SUPER ADMINISTRADOR\"\r\n        },\r\n        \"fechaHMSIngresoUsuario\": \"2019-08-05T17:32:00.000-05:00\",\r\n        \"fechaHMSModificacionUsuario\": \"2026-07-02T06:15:00.000-05:00\",\r\n        \"estadoUsuario\": \"ACTIVO\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarRecuperacionContrasenaAccesoUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateEstadosUsosCodigosActivacionesContrasenasAccesosUsuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idRecuperacionContrasenaAccesoUsuario\": 1,\r\n        \"codigoActivacionContrasenaAccesoUsuario\": \"2020\",\r\n        \"fechaHMSExpCodActivContrasenaAccesoUsuario\": \"2025-05-06T00:07:18.478-05:00\",\r\n        \"estadoUsoCodigoActivacionContrasenaAccesoUsuario\": \"USADO\",\r\n        \"usuarioDTO\": {\r\n            \"idUsuario\": 1,\r\n            \"nicknameUsuario\": \"administrator\",\r\n            \"passwordUsuario\": \"Vm0wd2QyVkZNVWRpUm1ScFVtMVNXRll3Wkc5V2JHeDBaVVYwV0ZKdGVEQmFSV2hyVm14S2MyTkljRmROYWtaSVZqQmFTMk15VGtsaVJtUnBWa1phZVZadE1UUlRNbEpYVW01T2FWSnNXbGhaYkZwS1pXeGFjMVp0UmxkTlZuQlhWRlpXVjJGSFZuRlJWR3M5\",\r\n            \"numeroDocumentoIdentificacionUsuario\": \"555551\",\r\n            \"lugarExpedicionDocumentoIdentificacionUsuario\": \"IBAGUE\",\r\n            \"gradoUsuario\": null,\r\n            \"nombresUsuario\": \"ADMINISTRADOR\",\r\n            \"primerApellidoUsuario\": \"DEL SISTEMA\",\r\n            \"segundoApellidoUsuario\": null,\r\n            \"nombreArchivoFotoExtensionoFormatoUsuario\": null,\r\n            \"fechaHMSNacimientoUsuario\": \"1985-02-15T00:00:00.000-05:00\",\r\n            \"sexoUsuario\": \"MASCULINO\",\r\n            \"direccionUsuario\": \"BARRIO ANCON\",\r\n            \"telefonoUsuario\": null,\r\n            \"movilUsuario\": \"312\",\r\n            \"correoElectronicoPersonalUsuario\": \"administrator@ejercito.mil.co\",\r\n            \"correoElectronicoInstitucionalUsuario\": null,\r\n            \"paisOrigenUsuario\": \"COLOMBIA\",\r\n            \"departamentooEstadoOrigenUsuario\": \"TOLIMA\",\r\n            \"ciudadOrigenUsuario\": \"IBAGUE\",\r\n            \"fechaHMSIngresoUsuario\": \"2023-03-22T21:53:02.000-05:00\",\r\n            \"estadoUsuario\": \"ACTIVO\",\r\n            \"tipoDocumentoIdentificacionDTO\": {\r\n                \"idTipoDocumentoIdentificacion\": 1,\r\n                \"nombreTipoDocumentoIdentificacion\": \"CEDULA DE CIUDADANIA\"\r\n            },\r\n            \"tipoUsuarioDTO\": {\r\n                \"idTipoUsuario\": 2,\r\n                \"nombreTipoUsuario\": \"SUPER ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/actualizarEstados/2026-06-01T05:58:00.000-05:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"actualizarEstados",
+								"2026-06-01T05:58:00.000-05:00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VaciarRecuperacionesContrasenasAccesosUsuariosBYIdUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg0MDE1ODYxLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.fXy3JHtXhB03ABpCZIoxK3frhHQnsRF0hq9HQsx2pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/recuperacionesContrasenasAccesosUsuarios/vaciar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"recuperacionesContrasenasAccesosUsuarios",
+								"vaciar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Roles",
 			"item": [
 				{
@@ -6481,6 +7254,338 @@
 							"path": [
 								"subclasificacionesEmpleadosPlantas",
 								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TarifasEmpleados",
+			"item": [
+				{
+					"name": "ContarTotalTarifasEmpleados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"count"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "idTarifaEmpleado",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTarifasEmpleados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/lista?orderBy=idTarifaEmpleado&orderMode=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"lista"
+							],
+							"query": [
+								{
+									"key": "idTarifaEmpleado",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "11023456701",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "idTarifaEmpleado"
+								},
+								{
+									"key": "orderMode",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTarifasEmpleadosPag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/listaPag?orderBy=idTarifaEmpleado&orderMode=ASC&page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"listaPag"
+							],
+							"query": [
+								{
+									"key": "idHistorialNovedadEmpleado",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "11023456701",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "idTarifaEmpleado"
+								},
+								{
+									"key": "orderMode",
+									"value": "ASC"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearTarifaEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTarifaEmpleado\": 21,\r\n    \"anioTarifaEmpleado\": 2026,\r\n    \"valorHoraTarifaEmpleado\": 8500.00,\r\n    \"fechaHMSIngresoTarifaEmpleado\": \"2026-08-05T22:48:00.000-05:00\",\r\n    \"fechaHMSModificacionTarifaEmpleado\": \"2026-08-05T22:48:00.000-05:00\",\r\n    \"estadoTarifaEmpleado\": \"ACTIVO\",\r\n    \"tipoEmpleadoDTO\": {\r\n        \"idTipoEmpleado\": 1,\r\n        \"nombreTipoEmpleado\": \"DISPONIBLE\"\r\n    },\r\n    \"tipoEmpleadoPlantaDTO\": {\r\n        \"idTipoEmpleadoPlanta\": 1,\r\n        \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n    },\r\n    \"clasificacionEmpleadoPlantaDTO\": {\r\n        \"idClasificacionEmpleadoPlanta\": 1,\r\n        \"nombreClasificacionEmpleadoPlanta\": \"SUPERVISOR\",\r\n        \"tipoEmpleadoPlantaDTO\": {\r\n            \"idTipoEmpleadoPlanta\": 1,\r\n            \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n        }\r\n    },\r\n    \"subclasificacionEmpleadoPlantaDTO\": {\r\n        \"idSubclasificacionEmpleadoPlanta\": 1,\r\n        \"nombreSubclasificacionEmpleadoPlanta\": \"SUPERVISOR DE PUESTO\",\r\n        \"clasificacionEmpleadoPlantaDTO\": {\r\n            \"idClasificacionEmpleadoPlanta\": 1,\r\n            \"nombreClasificacionEmpleadoPlanta\": \"SUPERVISOR\",\r\n            \"tipoEmpleadoPlantaDTO\": {\r\n                \"idTipoEmpleadoPlanta\": 1,\r\n                \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n            }\r\n        }\r\n    },\r\n    \"tipoTarifaEmpleadoDTO\": {\r\n        \"idTipoTarifaEmpleado\": 1,\r\n        \"nombreTipoTarifaEmpleado\": \"HORA ORDINARIA DIURNA\",\r\n        \"descripcionTipoTarifaEmpleado\": \"Tarifa base para hora laborada ordinaria en jornada diurna.\",\r\n        \"estadoTipoTarifaEmpleado\": \"ACTIVO\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarTarifaEmpleadoporId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarTarifaEmpleadoporIdEmpleadoEIdTipoEmpleadoPlantaEIdClasificacionEmpleadoPlantaEIdSubclasificacionEmpleadoPlantaEIdTipoTarifaEmpleadoYAnio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/idTipoEmpleado/1/idTipoEmpleadoPlanta/1/idClasificacionEmpleadoPlanta/1/idSubclasificacionEmpleadoPlanta/1/idTipoTarifaEmpleado/1/anio/2026",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"idTipoEmpleado",
+								"1",
+								"idTipoEmpleadoPlanta",
+								"1",
+								"idClasificacionEmpleadoPlanta",
+								"1",
+								"idSubclasificacionEmpleadoPlanta",
+								"1",
+								"idTipoTarifaEmpleado",
+								"1",
+								"anio",
+								"2026"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarTarifaEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTarifaEmpleado\": 1,\r\n    \"anioTarifaEmpleado\": 2026,\r\n    \"valorHoraTarifaEmpleado\": 8500.00,\r\n    \"fechaHMSIngresoTarifaEmpleado\": \"2026-08-05T22:48:00.000-05:00\",\r\n    \"fechaHMSModificacionTarifaEmpleado\": \"2026-08-05T22:48:00.000-05:00\",\r\n    \"estadoTarifaEmpleado\": \"ACTIVO\",\r\n    \"tipoEmpleadoDTO\": {\r\n        \"idTipoEmpleado\": 1,\r\n        \"nombreTipoEmpleado\": \"DISPONIBLE\"\r\n    },\r\n    \"tipoEmpleadoPlantaDTO\": {\r\n        \"idTipoEmpleadoPlanta\": 1,\r\n        \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n    },\r\n    \"clasificacionEmpleadoPlantaDTO\": {\r\n        \"idClasificacionEmpleadoPlanta\": 1,\r\n        \"nombreClasificacionEmpleadoPlanta\": \"SUPERVISOR\",\r\n        \"tipoEmpleadoPlantaDTO\": {\r\n            \"idTipoEmpleadoPlanta\": 1,\r\n            \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n        }\r\n    },\r\n    \"subclasificacionEmpleadoPlantaDTO\": {\r\n        \"idSubclasificacionEmpleadoPlanta\": 1,\r\n        \"nombreSubclasificacionEmpleadoPlanta\": \"SUPERVISOR DE PUESTO\",\r\n        \"clasificacionEmpleadoPlantaDTO\": {\r\n            \"idClasificacionEmpleadoPlanta\": 1,\r\n            \"nombreClasificacionEmpleadoPlanta\": \"SUPERVISOR\",\r\n            \"tipoEmpleadoPlantaDTO\": {\r\n                \"idTipoEmpleadoPlanta\": 1,\r\n                \"nombreTipoEmpleadoPlanta\": \"ADMINISTRATIVO\"\r\n            }\r\n        }\r\n    },\r\n    \"tipoTarifaEmpleadoDTO\": {\r\n        \"idTipoTarifaEmpleado\": 1,\r\n        \"nombreTipoTarifaEmpleado\": \"HORA ORDINARIA DIURNA\",\r\n        \"descripcionTipoTarifaEmpleado\": \"Tarifa base para hora laborada ordinaria en jornada diurna.\",\r\n        \"estadoTipoTarifaEmpleado\": \"ACTIVO\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarTarifaEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tarifasEmpleados/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tarifasEmpleados",
+								"21"
 							]
 						}
 					},
@@ -8111,6 +9216,328 @@
 			]
 		},
 		{
+			"name": "TiposTarifasEmpleados",
+			"item": [
+				{
+					"name": "ContarTotalTiposTarifasEmpleados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados",
+								"count"
+							],
+							"query": [
+								{
+									"key": "idTipoTarifaEmpleado",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTiposTarifasEmpleados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados/lista?orderMode=ASC&orderBy=idTipoTarifaEmpleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados",
+								"lista"
+							],
+							"query": [
+								{
+									"key": "idTipoTarifaEmpleado",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "orderMode",
+									"value": "ASC"
+								},
+								{
+									"key": "orderBy",
+									"value": "idTipoTarifaEmpleado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTiposTarifasEmpleadosPag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposNovedadesEmpleados/listaPag?orderBy=idTipoTarifaEmpleado&orderMode=ASC&page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposNovedadesEmpleados",
+								"listaPag"
+							],
+							"query": [
+								{
+									"key": "idTipoNovedadEmpleado",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "idTipoTarifaEmpleado"
+								},
+								{
+									"key": "orderMode",
+									"value": "ASC"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearTipoTarifaEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoTarifaEmpleado\": 13,\r\n    \"nombreTipoTarifaEmpleado\": \"HORA ORDINARIA DIURNA1\",\r\n    \"descripcionTipoTarifaEmpleado\": \"Tarifa base para hora laborada ordinaria en jornada diurna.\",\r\n    \"estadoTipoTarifaEmpleado\": \"ACTIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarTipoTarifaEmpleadoporId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarTipoTarifaEmpleadoporNombre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados/nombre/HORA ORDINARIA DIURNA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados",
+								"nombre",
+								"HORA ORDINARIA DIURNA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarTipoTarifaEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoTarifaEmpleado\": 13,\r\n    \"nombreTipoTarifaEmpleado\": \"HORA ORDINARIA DIURNA1\",\r\n    \"descripcionTipoTarifaEmpleado\": \"Tarifa base para hora laborada ordinaria en jornada diurna.\",\r\n    \"estadoTipoTarifaEmpleado\": \"ACTIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarTipoNovedadEmpleado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzg4NDc5OTMzLCJub21icmUiOiJBRE1JTklTVFJBRE9SIn0.BZgzIe5QFkKwTT5UkqWfqnQ2gsTKxcfNeLMsfgo5GDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/tiposTarifasEmpleados/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"tiposTarifasEmpleados",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "TiposUsuarios",
 			"item": [
 				{
@@ -8876,7 +10303,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/usuarios/lista?orderBy=idUsuario&orderMode=ASC",
+							"raw": "http://localhost:8084/usuarios/lista?orderBy=idUsuario&orderMode=ASC&nombreTipoUsuario=ADMINISTRADOR",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -8904,6 +10331,10 @@
 								{
 									"key": "orderMode",
 									"value": "ASC"
+								},
+								{
+									"key": "nombreTipoUsuario",
+									"value": "ADMINISTRADOR"
 								}
 							]
 						}
@@ -8926,7 +10357,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/usuarios/listaPag?orderBy=idUsuario&orderMode=ASC&page=0&size=10",
+							"raw": "http://localhost:8084/usuarios/listaPag?nombreTipoUsuario=ADMINISTRADOR&orderBy=idUsuario&orderMode=ASC&page=0&size=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -8938,14 +10369,8 @@
 							],
 							"query": [
 								{
-									"key": "keyword",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "idUsuario",
-									"value": "",
-									"disabled": true
+									"key": "nombreTipoUsuario",
+									"value": "ADMINISTRADOR"
 								},
 								{
 									"key": "orderBy",
@@ -8962,6 +10387,11 @@
 								{
 									"key": "size",
 									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}

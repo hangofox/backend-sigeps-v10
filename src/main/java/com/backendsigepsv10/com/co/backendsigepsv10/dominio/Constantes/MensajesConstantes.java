@@ -54,6 +54,7 @@ public class MensajesConstantes {
     public static final String MSG_REGISTRO_CENTRO_COSTO_YA_EXISTE = "Centro de Costo del Registro ya existe en Base de Datos.";
     public static final String MSG_REGISTRO_NICKNAME_YA_EXISTE = "Nickname de Usuario del Registro ya existe en Base de Datos.";
     public static final String MSG_REGISTRO_PRIVILEGIO_Y_RESTRICCION_YA_EXISTEN = "Privilegio y Restricción del Registro para el usuario ya existe en Base de Datos.";
+    public static final String MSG_REGISTRO_TARIFA_EMPLEADO_TIPO_Y_ANIO_YA_EXISTE = "La Tarifa del Empleado para el Tipo de Tarifa y Año proporcionados ya existe en Base de Datos.";
     public static final String MSG_REGISTRO_SIGLA_O_ACRONIMO_YA_EXISTE = "Sigla o Acrónimo del Registro ya existe en Base de Datos.";
     public static final String MSG_REGISTRO_UNIDAD_MILITAR_YA_EXISTE = "La Unidad Militar del Registro ya existe en Base de Datos.";
     public static final String MSG_REGISTRO_NOMBRE_EN_UNIDAD_MILITAR_YA_EXISTE = "Nombre del Registro ya existe en esta Unidad Militar.";
