@@ -40,6 +40,13 @@ public class Empleado {
     @Column(name = "NOMBRE_ARCHIVO_FOTO_EXTENSION_O_FORMATO_EMPLEADO", columnDefinition="TEXT NOT NULL")
     private String nombreArchivoFotoExtensionOFormatoEmpleado;
     
+    @Column(name = "FECHA_H_M_S_NACIMIENTO_EMPLEADO", columnDefinition="DATETIME NOT NULL")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaHMSNacimientoEmpleado;
+    
+    @Column(name = "SEXO_EMPLEADO", columnDefinition="VARCHAR(50) NOT NULL")
+    private String sexoEmpleado;
+    
     @Column(name = "DIRECCION_EMPLEADO", columnDefinition="VARCHAR(150) NOT NULL")
     private String direccionEmpleado;
     
@@ -146,6 +153,18 @@ public class Empleado {
     }
     public void setNombreArchivoFotoExtensionOFormatoEmpleado(String nombreArchivoFotoExtensionOFormatoEmpleado) {
         this.nombreArchivoFotoExtensionOFormatoEmpleado = nombreArchivoFotoExtensionOFormatoEmpleado;
+    }
+    public Date getFechaHMSNacimientoEmpleado() {
+        return fechaHMSNacimientoEmpleado;
+    }
+    public void setFechaHMSNacimientoEmpleado(Date fechaHMSNacimientoEmpleado) {
+        this.fechaHMSNacimientoEmpleado = fechaHMSNacimientoEmpleado;
+    }
+    public String getSexoEmpleado() {
+        return sexoEmpleado;
+    }
+    public void setSexoEmpleado(String sexoEmpleado) {
+        this.sexoEmpleado = sexoEmpleado;
     }
     public String getDireccionEmpleado() {
         return direccionEmpleado;

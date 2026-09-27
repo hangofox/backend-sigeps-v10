@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>backendsigepsv10</name>
 	<description>SISTEMA INTEGRADO DE GESTION DE PERSONAL DE SEGURIDAD V1.0</description>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -39,11 +39,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!--TOMCAT EMBEBIDO EN SCOPE "provided": AL DESPLEGAR COMO WAR EN UN TOMCAT EXTERNO (TOMCAT 10 DE
+		     HOSTINGER), EL CONTENEDOR YA APORTA SU PROPIO TOMCAT/SERVLET API. SIN "provided" QUEDARIAN
+		     CLASES DE TOMCAT DUPLICADAS EN WEB-INF/lib, LO CUAL PUEDE ROMPER EL DESPLIEGUE.
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<!--DEPENDENCIAS AGREGADAS PARA ENVÍO DE CORREOS.-->
 		<!-- spring-boot-starter-mail SE QUITO: EmailServiceImpl NO USA JavaMailSender NI NINGUNA CLASE
 		     DE org.springframework.mail, SOLO LA API CRUDA DE javax.mail. spring-boot-starter-mail SOLO
 		     ARRASTRABA POR TRANSITIVIDAD jakarta.mail/angus-activation, QUE CHOCABA CON javax.mail/javax.activation
-		     DE ABAJO (ClassCastException AL RESOLVER EL DataContentHandler DE text/html AL ENVIAR CORREOS HTML). -->
+		     DE ABAJO (ClassCastException AL RESOLVER EL DataContentHandler DE text/html AL ENVIAR CORREOS HTML).
+		-->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>

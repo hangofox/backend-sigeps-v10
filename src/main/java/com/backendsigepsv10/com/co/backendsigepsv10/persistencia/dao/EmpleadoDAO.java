@@ -71,6 +71,8 @@ public class EmpleadoDAO {
         empleado.setPrimerApellidoEmpleado(empleadoDTO.getPrimerApellidoEmpleado().toUpperCase());
         empleado.setSegundoApellidoEmpleado(empleadoDTO.getSegundoApellidoEmpleado().toUpperCase());
         empleado.setNombreArchivoFotoExtensionOFormatoEmpleado(empleadoDTO.getNombreArchivoFotoExtensionOFormatoEmpleado());
+        empleado.setFechaHMSNacimientoEmpleado(empleadoDTO.getFechaHMSNacimientoEmpleado());
+        empleado.setSexoEmpleado(empleadoDTO.getSexoEmpleado().toUpperCase());
         empleado.setDireccionEmpleado(empleadoDTO.getDireccionEmpleado().toUpperCase());
         empleado.setTelefonoEmpleado(empleadoDTO.getTelefonoEmpleado().toUpperCase());
         empleado.setMovilEmpleado(empleadoDTO.getMovilEmpleado().toUpperCase());
@@ -131,6 +133,8 @@ public class EmpleadoDAO {
         empleadoDTO.setPrimerApellidoEmpleado(empleado.getPrimerApellidoEmpleado().toUpperCase());
         empleadoDTO.setSegundoApellidoEmpleado(empleado.getSegundoApellidoEmpleado().toUpperCase());
         empleadoDTO.setNombreArchivoFotoExtensionOFormatoEmpleado(empleado.getNombreArchivoFotoExtensionOFormatoEmpleado());
+        empleadoDTO.setFechaHMSNacimientoEmpleado(empleado.getFechaHMSNacimientoEmpleado());
+        empleadoDTO.setSexoEmpleado(empleado.getSexoEmpleado().toUpperCase());
         empleadoDTO.setDireccionEmpleado(empleado.getDireccionEmpleado().toUpperCase());
         empleadoDTO.setTelefonoEmpleado(empleado.getTelefonoEmpleado().toUpperCase());
         empleadoDTO.setMovilEmpleado(empleado.getMovilEmpleado().toUpperCase());

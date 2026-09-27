@@ -45,7 +45,21 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
-    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%'))))", nativeQuery = true)
+    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.sexo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.direccion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.telefono_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.movil_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_personal_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_institucional_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.pais_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.departamento_o_estado_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.ciudad_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados.nombre_tipo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados_planta.nombre_tipo_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_clasificaciones_empleados_plantas.nombre_clasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_subclasificaciones_empleados_plantas.nombre_subclasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.estado_empleado) LIKE UPPER(CONCAT('%', :keyword, '%'))))", nativeQuery = true)
     Long findTotalRegistros(@Param("idEmpleado") Long idEmpleado, @Param("keyword") String keyword, @Param("nombreTipoDocumentoIdentificacion") String nombreTipoDocumentoIdentificacion, @Param("numeroDocumentoIdentificacionEmpleado") String numeroDocumentoIdentificacionEmpleado, @Param("nombresEmpleado") String nombresEmpleado, @Param("primerApellidoEmpleado") String primerApellidoEmpleado);
     
     //1. LISTADO DE REGISTROS FILTRADOS.
@@ -73,7 +87,21 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
-    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')))) " +
+    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.sexo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.direccion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.telefono_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.movil_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_personal_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_institucional_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.pais_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.departamento_o_estado_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.ciudad_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados.nombre_tipo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados_planta.nombre_tipo_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_clasificaciones_empleados_plantas.nombre_clasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_subclasificaciones_empleados_plantas.nombre_subclasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.estado_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')))) " +
     "ORDER BY " +
     "CASE WHEN :orderBy = 'idEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.id_empleado END ASC, " +
     "CASE WHEN :orderBy = 'idEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.id_empleado END DESC, " +
@@ -87,8 +115,32 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "CASE WHEN :orderBy = 'primerApellidoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.primer_apellido_empleado END DESC, " +
     "CASE WHEN :orderBy = 'segundoApellidoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.segundo_apellido_empleado END ASC, " +
     "CASE WHEN :orderBy = 'segundoApellidoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.segundo_apellido_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'fechaHMSNacimientoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.fecha_h_m_s_nacimiento_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'fechaHMSNacimientoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.fecha_h_m_s_nacimiento_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'sexoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.sexo_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'sexoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.sexo_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'direccionEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.direccion_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'direccionEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.direccion_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'telefonoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.telefono_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'telefonoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.telefono_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'movilEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.movil_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'movilEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.movil_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'correoElectronicoPersonalEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.correo_electronico_personal_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'correoElectronicoPersonalEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.correo_electronico_personal_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'correoElectronicoInstitucionalEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.correo_electronico_institucional_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'correoElectronicoInstitucionalEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.correo_electronico_institucional_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'paisOrigenEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.pais_origen_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'paisOrigenEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.pais_origen_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'departamentooEstadoOrigenEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.departamento_o_estado_origen_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'departamentooEstadoOrigenEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.departamento_o_estado_origen_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'ciudadOrigenEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.ciudad_origen_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'ciudadOrigenEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.ciudad_origen_empleado END DESC, " +
     "CASE WHEN :orderBy = 'fechaHMSIngresoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.fecha_h_m_s_ingreso_empleado END ASC, " +
-    "CASE WHEN :orderBy = 'fechaHMSIngresoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.fecha_h_m_s_ingreso_empleado END DESC", nativeQuery = true)
+    "CASE WHEN :orderBy = 'fechaHMSIngresoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.fecha_h_m_s_ingreso_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'fechaHMSModificacionEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.fecha_h_m_s_modficacion_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'fechaHMSModificacionEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.fecha_h_m_s_modficacion_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'estadoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.estado_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'estadoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.estado_empleado END DESC", nativeQuery = true)
     List<Empleado> findAllEmpleados(@Param("idEmpleado") Long idEmpleado, @Param("keyword") String keyword, @Param("nombreTipoDocumentoIdentificacion") String nombreTipoDocumentoIdentificacion, @Param("numeroDocumentoIdentificacionEmpleado") String numeroDocumentoIdentificacionEmpleado, @Param("nombresEmpleado") String nombresEmpleado, @Param("primerApellidoEmpleado") String primerApellidoEmpleado, @Param("orderBy") String orderBy, @Param("orderMode") String orderMode);
     
     //2. LISTADO DE REGISTROS FILTRADOS PAGINADOS.
@@ -116,16 +168,40 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
-    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')))) " +
+    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.sexo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.direccion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.telefono_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.movil_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_personal_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.correo_electronico_institucional_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.pais_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.departamento_o_estado_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.ciudad_origen_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados.nombre_tipo_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_tipos_empleados_planta.nombre_tipo_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_clasificaciones_empleados_plantas.nombre_clasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_subclasificaciones_empleados_plantas.nombre_subclasificacion_empleado_planta) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.estado_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')))) " +
     "ORDER BY " +
     "CASE WHEN :orderBy = 'idEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.id_empleado END ASC, " +
     "CASE WHEN :orderBy = 'idEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.id_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'nombreTipoDocumentoIdentificacion' AND :orderMode = 'ASC' THEN tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion END ASC, " +
+    "CASE WHEN :orderBy = 'nombreTipoDocumentoIdentificacion' AND :orderMode = 'DESC' THEN tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion END DESC, " +
+    "CASE WHEN :orderBy = 'numeroDocumentoIdentificacionEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.numero_documento_identificacion_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'numeroDocumentoIdentificacionEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.numero_documento_identificacion_empleado END DESC, " +
     "CASE WHEN :orderBy = 'nombresEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.nombres_empleado END ASC, " +
     "CASE WHEN :orderBy = 'nombresEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.nombres_empleado END DESC, " +
     "CASE WHEN :orderBy = 'primerApellidoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.primer_apellido_empleado END ASC, " +
     "CASE WHEN :orderBy = 'primerApellidoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.primer_apellido_empleado END DESC, " +
     "CASE WHEN :orderBy = 'segundoApellidoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.segundo_apellido_empleado END ASC, " +
-    "CASE WHEN :orderBy = 'segundoApellidoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.segundo_apellido_empleado END DESC",
+    "CASE WHEN :orderBy = 'segundoApellidoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.segundo_apellido_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'fechaHMSNacimientoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.fecha_h_m_s_nacimiento_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'fechaHMSNacimientoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.fecha_h_m_s_nacimiento_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'sexoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.sexo_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'sexoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.sexo_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'estadoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.estado_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'estadoEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.estado_empleado END DESC",
     countQuery = "" +
     "SELECT COUNT(*) " +
     "FROM " +
@@ -146,9 +222,9 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "(:numeroDocumentoIdentificacionEmpleado IS NULL OR UPPER(tabla_empleados.numero_documento_identificacion_empleado) = UPPER(:numeroDocumentoIdentificacionEmpleado)) AND " +
     "(:nombresEmpleado IS NULL OR UPPER(tabla_empleados.nombres_empleado) = UPPER(:nombresEmpleado)) AND " +
     "(:primerApellidoEmpleado IS NULL OR UPPER(tabla_empleados.primer_apellido_empleado) = UPPER(:primerApellidoEmpleado)) AND " +
-    "(:keyword IS NULL OR (UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
-    "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
-    "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%'))))", nativeQuery = true)
+    "(:keyword IS NULL OR (UPPER(tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.estado_empleado) LIKE UPPER(CONCAT('%', :keyword, '%'))))", nativeQuery = true)
     Slice<Empleado> findAllEmpleadosPag(Pageable pageable, @Param("idEmpleado") Long idEmpleado, @Param("keyword") String keyword, @Param("nombreTipoDocumentoIdentificacion") String nombreTipoDocumentoIdentificacion, @Param("numeroDocumentoIdentificacionEmpleado") String numeroDocumentoIdentificacionEmpleado, @Param("nombresEmpleado") String nombresEmpleado, @Param("primerApellidoEmpleado") String primerApellidoEmpleado, @Param("orderBy") String orderBy, @Param("orderMode") String orderMode);
     
     Optional<Empleado> findByIdEmpleado(Long idEmpleado);

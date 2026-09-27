@@ -20,6 +20,8 @@ public class EmpleadoDTO {
     private String primerApellidoEmpleado;
     private String segundoApellidoEmpleado;
     private String nombreArchivoFotoExtensionOFormatoEmpleado;
+    private Date fechaHMSNacimientoEmpleado;
+    private String sexoEmpleado;
     private String direccionEmpleado;
     private String telefonoEmpleado;
     private String movilEmpleado;
