@@ -43,6 +43,7 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "(:primerApellidoEmpleado IS NULL OR UPPER(tabla_empleados.primer_apellido_empleado) = UPPER(:primerApellidoEmpleado)) AND " +
     "(:keyword IS NULL OR (UPPER(tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.lugar_expedicion_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
@@ -85,6 +86,7 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "(:primerApellidoEmpleado IS NULL OR UPPER(tabla_empleados.primer_apellido_empleado) = UPPER(:primerApellidoEmpleado)) AND " +
     "(:keyword IS NULL OR (UPPER(tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.lugar_expedicion_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
@@ -109,6 +111,8 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "CASE WHEN :orderBy = 'nombreTipoDocumentoIdentificacion' AND :orderMode = 'DESC' THEN tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion END DESC, " +
     "CASE WHEN :orderBy = 'numeroDocumentoIdentificacionEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.numero_documento_identificacion_empleado END ASC, " +
     "CASE WHEN :orderBy = 'numeroDocumentoIdentificacionEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.numero_documento_identificacion_empleado END DESC, " +
+    "CASE WHEN :orderBy = 'lugarExpedicionDocumentoIdentificacionEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.lugar_expedicion_documento_identificacion_empleado END ASC, " +
+    "CASE WHEN :orderBy = 'lugarExpedicionDocumentoIdentificacionEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.lugar_expedicion_documento_identificacion_empleado END DESC, " +
     "CASE WHEN :orderBy = 'nombresEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.nombres_empleado END ASC, " +
     "CASE WHEN :orderBy = 'nombresEmpleado' AND :orderMode = 'DESC' THEN tabla_empleados.nombres_empleado END DESC, " +
     "CASE WHEN :orderBy = 'primerApellidoEmpleado' AND :orderMode = 'ASC' THEN tabla_empleados.primer_apellido_empleado END ASC, " +
@@ -166,6 +170,7 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Long> {
     "(:primerApellidoEmpleado IS NULL OR UPPER(tabla_empleados.primer_apellido_empleado) = UPPER(:primerApellidoEmpleado)) AND " +
     "(:keyword IS NULL OR (UPPER(tabla_tipos_documentos_identificacion.nombre_tipo_documento_identificacion) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.numero_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
+    "UPPER(tabla_empleados.lugar_expedicion_documento_identificacion_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.nombres_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.primer_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +
     "UPPER(tabla_empleados.segundo_apellido_empleado) LIKE UPPER(CONCAT('%', :keyword, '%')) OR " +

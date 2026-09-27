@@ -28,6 +28,9 @@ public class Empleado {
     @Column(name = "NUMERO_DOCUMENTO_IDENTIFICACION_EMPLEADO", columnDefinition="VARCHAR(150) NOT NULL")
     private String numeroDocumentoIdentificacionEmpleado;
     
+    @Column(name = "LUGAR_EXPEDICION_DOCUMENTO_IDENTIFICACION_EMPLEADO", columnDefinition="VARCHAR(150) NOT NULL")
+    private String lugarExpedicionDocumentoIdentificacionEmpleado;
+    
     @Column(name = "NOMBRES_EMPLEADO", columnDefinition="VARCHAR(255) NOT NULL")
     private String nombresEmpleado;
     

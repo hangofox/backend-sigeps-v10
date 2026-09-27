@@ -16,6 +16,7 @@ public class EmpleadoDTO {
     //DECLARACIÓN DE LAS VARIABLES DEL DTO:
     private Long idEmpleado;
     private String numeroDocumentoIdentificacionEmpleado;
+    private String lugarExpedicionDocumentoIdentificacionEmpleado;
     private String nombresEmpleado;
     private String primerApellidoEmpleado;
     private String segundoApellidoEmpleado;

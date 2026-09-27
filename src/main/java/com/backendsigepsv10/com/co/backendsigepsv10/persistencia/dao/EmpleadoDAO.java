@@ -67,6 +67,7 @@ public class EmpleadoDAO {
         Empleado empleado = new Empleado();
         empleado.setIdEmpleado(empleadoDTO.getIdEmpleado());
         empleado.setNumeroDocumentoIdentificacionEmpleado(empleadoDTO.getNumeroDocumentoIdentificacionEmpleado());
+        empleado.setLugarExpedicionDocumentoIdentificacionEmpleado(empleadoDTO.getLugarExpedicionDocumentoIdentificacionEmpleado().toUpperCase());
         empleado.setNombresEmpleado(empleadoDTO.getNombresEmpleado().toUpperCase());
         empleado.setPrimerApellidoEmpleado(empleadoDTO.getPrimerApellidoEmpleado().toUpperCase());
         empleado.setSegundoApellidoEmpleado(empleadoDTO.getSegundoApellidoEmpleado().toUpperCase());
@@ -129,6 +130,7 @@ public class EmpleadoDAO {
         EmpleadoDTO empleadoDTO = new EmpleadoDTO();
         empleadoDTO.setIdEmpleado(empleado.getIdEmpleado());
         empleadoDTO.setNumeroDocumentoIdentificacionEmpleado(empleado.getNumeroDocumentoIdentificacionEmpleado());
+        empleadoDTO.setLugarExpedicionDocumentoIdentificacionEmpleado(empleado.getLugarExpedicionDocumentoIdentificacionEmpleado().toUpperCase());
         empleadoDTO.setNombresEmpleado(empleado.getNombresEmpleado().toUpperCase());
         empleadoDTO.setPrimerApellidoEmpleado(empleado.getPrimerApellidoEmpleado().toUpperCase());
         empleadoDTO.setSegundoApellidoEmpleado(empleado.getSegundoApellidoEmpleado().toUpperCase());
